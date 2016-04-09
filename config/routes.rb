@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'homesite#home'
 
-  get 'homesite/contact'
+  get 'contact' => 'homesite#contact'
 
-  get 'homesite/price'
+  get 'price' => 'homesite#price'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,7 +3,7 @@
 
 //Define all the vars that we need!
 $(document).ready(function(){
-  var trackerURL = "http://localhost:3000/control/";
+  var trackerURL = "http://usertracker-rd.herokuapp.com/control/"; //UPDATE HERE TO YOUR TRACKER URL
   var useruid, finalURL,whereIAM, ready;
 
 
@@ -39,4 +39,31 @@ $(document).ready(function(){
     type: "GET",
     success: function(resp){}
   });
+
+  //EMAIL VALIDATION
+
+
+  //FORM UPDATE EMAIL
+  $("#formoid").submit(function(event) {
+
+    /* stop form from submitting normally */
+    event.preventDefault();
+
+    if (isEmail($('#email').val())) {
+      /* Send the data using post */
+      var posting = $.post( trackerURL+"update/"+useruid, { email: $('#email').val() } );
+      function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+      }
+      /* Alerts the results */
+      posting.done(function( data ) {
+        alert('Email enviado com sucesso');
+      });
+    }
+    else {
+        alert('Email invalido');
+    }
+  });
+
 });
