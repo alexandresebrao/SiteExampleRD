@@ -1,0 +1,2 @@
+module HomesiteHelper
+end
