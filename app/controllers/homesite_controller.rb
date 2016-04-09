@@ -7,4 +7,7 @@ class HomesiteController < ApplicationController
 
   def price
   end
+
+  def about
+  end
 end

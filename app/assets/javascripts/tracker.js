@@ -2,7 +2,8 @@
 // You need to set the main url to provide the Tracker url to it to work
 
 //Define all the vars that we need!
-$(document).ready(function(){
+var ready;
+ready = function(){
   var trackerURL = "http://usertracker-rd.herokuapp.com/control/"; //UPDATE HERE TO YOUR TRACKER URL
   var useruid, finalURL,whereIAM, ready;
 
@@ -11,13 +12,13 @@ $(document).ready(function(){
 
   var url = window.location.href;
   if (url.indexOf("about") != -1) {
-    whereIAM = 'about'
+    whereIAM = 'Sobre'
   }
   else if (url.indexOf("prices") != -1) {
-    whereIAM = 'prices'
+    whereIAM = 'Preços'
   }
   else if (url.indexOf("contact") != -1) {
-    whereIAM = 'contact'
+    whereIAM = 'Contato'
   }
   else {
     whereIAM = 'home'
@@ -66,4 +67,6 @@ $(document).ready(function(){
     }
   });
 
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);

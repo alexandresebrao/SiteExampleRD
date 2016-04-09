@@ -13,7 +13,7 @@ You need to modify the JS file
 ```
 app/assets/javascript/tracker.js
 ```
-and put the url of the tracker to it to work, on the file there is a comment where you should change the information required
+where is a comment to change the URL pointing to the tracker location where it's executing
 
 To run this WebApp you need Rails 4.2.4 or greater and Ruby 2.2.1
 
